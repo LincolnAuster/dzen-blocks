@@ -14,7 +14,10 @@ A sample config file is provided in this repo.
 A config file is in ini format, and specifies the following for every block:
 * The command to run. This includes simple commands like date as well as complex shell scripts.
 * Any additional options to pass to dzen (extra flags, etc)
-and the following global values:
+and the following
+
+global values:
+
 * x, y offset: where the first block is aligned
 * x padding: distance between blocks
 
