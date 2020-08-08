@@ -1,6 +1,8 @@
 # Dzen Blocks
 Easily spawn multiple dzen instances for different blocks.
 
+![screenshot](screenshot.png)
+
 ## Usage Example
 dzen-blocks reads data in from a config file to create multiple bars, i.e.:
 
