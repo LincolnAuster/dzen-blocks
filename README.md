@@ -1,8 +1,6 @@
 # dzen-blocks
 Easily spawn multiple dzen instances for different blocks.
 
-![screenshot](screenshot.png)
-
 ## Usage Example
 dzen-blocks reads data in from a config file to create multiple bars, i.e.:
 
@@ -26,3 +24,7 @@ global values:
 * more local flags
 * removing need to escape %'s in the config file
 * adding this into some package managers
+
+## Obligatory Neofetch
+![screenshot](screenshot.png)
+
