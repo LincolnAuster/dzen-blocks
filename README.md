@@ -20,6 +20,7 @@ global values:
 * x padding: distance between blocks
 
 ## Tentatively Planned Additions/Roadmap
+* ~~rewrite in scheme or some other lisp~~ BAD IDEA
 * more global flags, including font and colors
 * more local flags
 * removing need to escape %'s in the config file
