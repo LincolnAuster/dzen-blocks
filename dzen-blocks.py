@@ -2,11 +2,10 @@
 
 from subprocess import Popen
 import configparser
-import argparse
+import sys
 
 class dzen:
     def __init__(self):
-        # default command, should never be used if config is correct
         self.cmd = ""
         self.options = ""
 
@@ -41,15 +40,20 @@ class dzen:
     def GetWidth(self):
         return self.width
 
+def h():
+    print("Usage: dzen-blocks [config]")
+    sys.exit()
+
 if __name__ == "__main__":
-    # this should be burninated
-    #
-    parser = argparse.ArgumentParser(description="Manage dzen instances")
-    parser.add_argument("config", help="Config file")
-    args = parser.parse_args()
-    config_path = args.config
-    #
-    # this should be burninated
+    if len(sys.argv) != 2:
+        h()
+
+    if sys.argv[1] == "h" or sys.argv[1] == "help":
+        h()
+    else:
+        config_path = sys.argv[1]
+
+    print(config_path)
     
     config = configparser.ConfigParser()
     config.read(config_path)
