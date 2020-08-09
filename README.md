@@ -1,9 +1,6 @@
 # dzen-blocks
 Easily spawn multiple dzen instances for different blocks.
 
-## Don't Use This
-I did a stupid and processes don't die even after being pkill'd. Uh. Yeah. I'll fix that.
-
 ## Usage Example
 dzen-blocks reads data in from a config file to create multiple bars, i.e.:
 
@@ -23,7 +20,7 @@ global values:
 * x padding: distance between blocks
 
 ## Tentatively Planned Additions/Roadmap
-* ~~rewrite in scheme or some other lisp~~ BAD IDEA
+* Make this a daemon, it might work a bit better than the current process.
 * more global flags, including font and colors
 * more local flags
 * removing need to escape %'s in the config file

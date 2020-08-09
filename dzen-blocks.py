@@ -19,7 +19,6 @@ class dzen:
     def run(self):
         write = "while sleep 1; do "
         write += self.cmd + "; done | dzen2 " + self.options
-        print(write)
         self.process = subprocess.Popen(write, shell=True)
 
     def SetCommand(self, command):
@@ -56,8 +55,6 @@ if __name__ == "__main__":
     else:
         config_path = sys.argv[1]
 
-    print(config_path)
-    
     config = configparser.ConfigParser()
     config.read(config_path)
 
@@ -106,6 +103,11 @@ if __name__ == "__main__":
             xpos += XPADDING
             xpos += dzeninstance.GetWidth()
 
-    input("Press any key to kill dzen instances...")
-    for instance in dzens:
-        instance.Kill()
+    def on_exit(sig, frame):
+        for instance in dzens:
+            instance.Kill()
+
+    signal.signal(signal.SIGINT, on_exit)
+    input("Ctrl+C or enter kills dzen instances.")
+
+    on_exit()
