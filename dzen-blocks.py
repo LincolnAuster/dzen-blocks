@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
+import sys, os
+
 import subprocess
+import signal
 import configparser
-import sys
 
 class dzen:
     def __init__(self):
@@ -16,9 +18,9 @@ class dzen:
 
     def run(self):
         write = "while sleep 1; do "
-        write += self.cmd + " | dzen2 " + self.options
-        write += "; done"
-        p = subprocess.Popen(write, shell=True)
+        write += self.cmd + "; done | dzen2 " + self.options
+        print(write)
+        self.process = subprocess.Popen(write, shell=True)
 
     def SetCommand(self, command):
         self.cmd = command
@@ -38,6 +40,8 @@ class dzen:
 
     def GetWidth(self):
         return self.width
+    def Kill(self):
+        os.killpg(os.getpgid(self.process.pid), signal.SIGTERM)
 
 def h():
     print("Usage: dzen-blocks [config]")
@@ -66,9 +70,11 @@ if __name__ == "__main__":
 
     xpos = XOFFSET
 
+    dzens = []
     for section in config.sections():
         if section != CONSTS:
             dzeninstance = dzen()
+            dzens.append(dzeninstance)
 
             if "cmd" in config[section]:
                 dzeninstance.SetCommand(config[section]["cmd"])
@@ -97,6 +103,9 @@ if __name__ == "__main__":
 
             dzeninstance.run()
 
-
             xpos += XPADDING
             xpos += dzeninstance.GetWidth()
+
+    input("Press any key to kill dzen instances...")
+    for instance in dzens:
+        instance.Kill()
