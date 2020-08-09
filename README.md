@@ -22,9 +22,7 @@ global values:
 * x padding: distance between blocks
 
 ## Tentatively Planned Additions/Roadmap
-* clean up the code: it's small but it's also _pretty_ bad.
-* remove dependenc on `argparse`, it's totally unecessary at this small scale.
 * more global flags, including font and colors
 * more local flags
-* not needing to escape %'s in the config file
+* removing need to escape %'s in the config file
 * adding this into some package managers
