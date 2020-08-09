@@ -78,8 +78,8 @@ if __name__ == "__main__":
 
             if "opt" in config[section]:
                 dzeninstance.SetOptions(config[section]["opt"])
-            else:
-                dzeninstance.SetOptions("-p")
+
+            dzeninstance.SetOptions(" -p")
 
             if "width" in config[section]:
                 dzeninstance.SetWidth(int(config[section]["width"]))
