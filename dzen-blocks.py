@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-
-from subprocess import Popen
+import subprocess
 import configparser
 import sys
 
@@ -13,20 +12,18 @@ class dzen:
         self.xoffset = 0
         self.yoffset = 0
         self.width = 0
-
         self.refresh = "0"
 
     def run(self):
-        write = "while sleep " + self.refresh + "; do (" + self.cmd + "); done | dzen2 "
-        write += self.options
-        p = Popen(write, shell=True)
+        write = self.cmd + " | dzen2 " + self.options
+        p = subprocess.Popen(write, shell=True)
 
     def SetCommand(self, command):
         self.cmd = command
     def SetRefresh(self, refresh):
         self.refresh = refresh
     def SetOptions(self, options):
-        self.options = options
+        self.options += options
     def SetWidth(self, width):
         self.width = width
         self.options += " -w " + str(width)

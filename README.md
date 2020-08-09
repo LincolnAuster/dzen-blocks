@@ -1,6 +1,9 @@
 # dzen-blocks
 Easily spawn multiple dzen instances for different blocks.
 
+## Don't Use This
+I did a stupid and processes don't die even after being pkill'd. Uh. Yeah. I'll fix that.
+
 ## Usage Example
 dzen-blocks reads data in from a config file to create multiple bars, i.e.:
 
