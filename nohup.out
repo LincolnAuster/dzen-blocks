@@ -1,4 +1,0 @@
-Ctrl+C or enter kills dzen instances.Traceback (most recent call last):
-  File "./dzen-blocks.py", line 122, in <module>
-    input("Ctrl+C or enter kills dzen instances.")
-OSError: [Errno 9] Bad file descriptor
