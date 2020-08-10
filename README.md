@@ -8,6 +8,8 @@ dzen-blocks reads data in from a config file to create multiple bars, i.e.:
 
 A sample config file is provided in this repo.
 
+Running in the background can be achieved with `nohup`.
+
 ## Configuration
 A config file is in ini format, and specifies the following for every block:
 * The command to run. This includes simple commands like date as well as complex shell scripts.
