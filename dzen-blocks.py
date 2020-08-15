@@ -18,8 +18,12 @@ class dzen:
         self.refresh = "0"
 
     def run(self):
-        write = "while sleep 1; do "
-        write += self.cmd + "; done | dzen2 " + self.options
+        if int(self.refresh) > 0:
+            write = "while sleep 1; do "
+            write += self.cmd + "; done | dzen2 " + self.options
+        else:
+            write = self.cmd + " | dzen2 " + self.options
+            print(write)
         self.process = subprocess.Popen(write, shell=True)
 
     def SetCommand(self, command):

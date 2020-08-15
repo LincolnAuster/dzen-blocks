@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/mnt/nvme/apps/suckfull/mine/dzen-blocks/dzen-blocks.py", line 113, in <module>
+    dzeninstance.run()
+  File "/mnt/nvme/apps/suckfull/mine/dzen-blocks/dzen-blocks.py", line 21, in run
+    if self.refresh > 0:
+TypeError: '>' not supported between instances of 'str' and 'int'
+Traceback (most recent call last):
+  File "/mnt/nvme/apps/suckfull/mine/dzen-blocks/dzen-blocks.py", line 113, in <module>
+    dzeninstance.run()
+  File "/mnt/nvme/apps/suckfull/mine/dzen-blocks/dzen-blocks.py", line 25, in run
+    write += self.cmd;
+UnboundLocalError: local variable 'write' referenced before assignment
+Ctrl+C or enter kills dzen instances.10:17:40 AM
+Traceback (most recent call last):
+  File "/mnt/nvme/apps/suckfull/mine/dzen-blocks/dzen-blocks.py", line 125, in <module>
+    input("Ctrl+C or enter kills dzen instances.")
+OSError: [Errno 9] Bad file descriptor
+SCHEDULE
+
+  8:15   M/W H Physics        T/Th Writing Lab
+  9:30       TAA
+  10:45      Data Structures       LUNCH
+  12:00      LUNCH                 Calc AB
+  1:15       MSB                   Violin
+
+Terminated
